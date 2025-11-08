@@ -1,0 +1,326 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Background patterns */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Custom Typography with Fallbacks */
+.font-display {
+  font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.font-body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Ensure content is always visible */
+.about-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+.about-content * {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Force visibility for all elements */
+.about-content,
+.about-content *,
+.about-content div,
+.about-content h1,
+.about-content h2,
+.about-content h3,
+.about-content p,
+.about-content ul,
+.about-content li {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  color: inherit !important;
+}
+
+/* Animations */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Design System Utility Classes */
+.container-custom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.rounded-medical {
+  border-radius: 0.75rem;
+}
+
+.rounded-medical-lg {
+  border-radius: 0.75rem;
+}
+
+.rounded-medical-md {
+  border-radius: 0.625rem;
+}
+
+.rounded-medical-sm {
+  border-radius: 0.5rem;
+}
+
+.shadow-medical {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-card {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+  --foreground: 222.2 12% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+  /* Primary Medical Colors */
+  --primary: 180 75% 45%; /* Medical Teal - main brand color */
+  --primary-foreground: 210 40% 98%;
+  --primary-glow: 180 85% 60%; /* Primary Glow - lighter teal */
+  
+  /* Secondary Colors */
+  --secondary: 195 65% 55%; /* Secondary cyan-blue */
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --accent: 180 80% 55%; /* Accent bright teal */
+  --accent-foreground: 210 40% 98%;
+  
+  /* Supporting Colors */
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 180 75% 45%; /* Medical Teal */
+  /* Design System Variables */
+  --radius-base: 0.75rem; /* 12px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-md: 0.625rem; /* 10px */
+  --radius-sm: 0.5rem; /* 8px */
+  
+  /* Container Settings */
+  --container-max-width: 1400px;
+  --container-padding: 2rem; /* 32px */
+  
+  /* Shadow Definitions */
+  --shadow-medical: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 30px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
+  
+  /* Typography Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --success: 142.1 76.2% 36.3%;
+  
+  /* Medical Color Palette */
+  --medical-teal: 180 75% 45%; /* Main brand color */
+  --medical-glow: 180 85% 60%; /* Lighter teal */
+  --medical-cyan: 195 85% 60%; /* Medical Cyan */
+  --medical-blue: 210 70% 55%; /* Medical Blue */
+  --neural-purple: 270 60% 65%; /* Neural Purple */
+  --medical-silver: 200 10% 85%; /* Medical Silver */
+  
+  /* Gradient Definitions */
+  --gradient-primary: hsl(180 75% 45%), hsl(180 85% 60%); /* Medical Teal to Primary Glow */
+  --gradient-secondary: hsl(195 65% 55%), hsl(195 85% 60%); /* Secondary to Medical Cyan */
+  --gradient-accent: hsl(180 80% 55%), hsl(195 85% 60%); /* Accent to Medical Cyan */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+body {
+  margin: 0;
+  /* Use the same base body font as the landing page */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 40s linear infinite;
+}
+
+@keyframes pulse-glow {
+  0% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.03); }
+  100% { opacity: 0.55; transform: scale(1); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
+.blur-4xl { filter: blur(56px); }
+
+.animated-canvas {
+  opacity: 0.85; /* stronger so particles are visible */
+  mix-blend-mode: screen; /* blend with background for brighter look */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: var(--radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Additional Utility Classes */
+.shadow-medium {
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.1),
+              0 4px 16px -4px rgba(0, 0, 0, 0.1);
+}

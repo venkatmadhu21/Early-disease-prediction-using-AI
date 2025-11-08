@@ -1,0 +1,12 @@
+Cancer:
+
+Lung Cancer:https://www.kaggle.com/datasets/adityamahimkar/iqothnccd-lung-cancer-dataset
+Breast Cancer: https://www.kaggle.com/datasets/ambarish/breakhis
+Colon Cancer: https://www.kaggle.com/datasets/orvile/coloncancerct-2025-abdominal-ct-scans
+
+Neurological Disorders:
+
+
+Epilepsy: https://www.kaggle.com/datasets/harunshimanto/epileptic-seizure-recognition
+Multiple Sclerosis: https://www.kaggle.com/datasets/buraktaci/multiple-sclerosis?select=MS
+Alzheimer’s: https://www.kaggle.com/datasets/lukechugh/best-alzheimer-mri-dataset-99-accuracy
